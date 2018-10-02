@@ -1,0 +1,8 @@
+<div class="dropdown" [ngClass]="{'closed':!visible}" (click)="onMouseClick($event)">
+    <div class="title">{{title}}</div>
+    <div class="dropdown-menu">
+        <ul>
+            <li *ngFor="let option of options" (click)="onItemClick($event, option)">{{option.label}}</li>
+        </ul>
+    </div>
+</div>
