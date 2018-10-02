@@ -121,6 +121,41 @@
           }
         }
       }
+    },
+    "NinjaCustomComponents": {
+      "root": "projects/ninja-custom-components",
+      "sourceRoot": "projects/ninja-custom-components/src",
+      "projectType": "library",
+      "prefix": "ncc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ninja-custom-components/tsconfig.lib.json",
+            "project": "projects/ninja-custom-components/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ninja-custom-components/src/test.ts",
+            "tsConfig": "projects/ninja-custom-components/tsconfig.spec.json",
+            "karmaConfig": "projects/ninja-custom-components/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ninja-custom-components/tsconfig.lib.json",
+              "projects/ninja-custom-components/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "CustomComponents"
